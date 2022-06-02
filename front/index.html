@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Login API Calc</title>
+
+        <!-- VueJs -->
+        <script src="./src/vue.min.js"></script>
+
+        <!-- Axios -->
+        <script src="./src/axios.min.js"></script>
+
+        <!-- <link rel="shortcut icon" href="./src/favicon.jpg" /> -->
+
+        <link rel="stylesheet" href="./src/bootstrap.min.css">
+        <script src="./src/jquery-3.2.1.slim.min.js"></script>
+        <script src="./src/popper.min.js"></script>
+        <script src="./src/bootstrap.min.js"></script>
+
+        <script src="./src/jquery.mask.min.js"></script>
+
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="./src/css.css">
+
+        <!-- Latest compiled and minified JS -->
+        <script src="./src/js.js"></script>
+
+
+    </head>
+
+    <body>
+
+        <div id="app" class="wrapper fadeInDown">
+            <div id="formContent">
+                <!-- Tabs Titles -->
+                <h2 class="active"> {{ message }} </h2>
+
+                <!-- Icon -->
+                <div class="fadeIn first">
+                    <!-- <img src="#" id="icon" alt="User Icon" /> -->
+                </div>
+
+
+                <form id="checkform" action="https://reqres.in/api/login">
+
+                    <input v-model="novoUsuario.email" type="text" id="email" class="fadeIn third" name="email" placeholder="Email" required>
+                    <div><span v-if="msg.email">{{msg.email}}</span></div>
+
+                    <input v-model="novoUsuario.password" type="text" id="password" class="fadeIn third" name="password" placeholder="Password" required>
+                    <div><span v-if="msg.password">{{msg.password}}</span></div>
+
+                    <input @submit type="submit" class="fadeIn fourth" value="Acessar" v-on:click="inserirUsuarios">
+                </form>
+
+
+            </div>
+        </div>
+
+    </body>
+
+    <script src="./src/script.js">
+    </script>
+
+</html>
